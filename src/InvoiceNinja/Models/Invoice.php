@@ -33,4 +33,10 @@ class Invoice extends AbstractModel
         
         return static::sendRequest($url, false, 'GET', true);
     }
+
+
+    public function emailInvoice()
+    {
+        return $this->sendAction('emailInvoice');
+    }
 }
