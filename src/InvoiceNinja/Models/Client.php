@@ -13,6 +13,15 @@ class Client extends AbstractModel
         $this->addContact($email, $first_name, $last_name);
     }
 
+    public function __clone()
+    {
+        $contacts = [];
+        foreach ($this->contacts as $contact) {
+            $contacts[] = clone $contact;
+        }
+        $this->contacts = $contacts;
+    }
+    
     public function addContact($email = '', $first_name = '', $last_name = '')
     {
         $contact = new stdClass();
