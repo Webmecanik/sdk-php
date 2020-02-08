@@ -39,4 +39,9 @@ class Invoice extends AbstractModel
     {
         return $this->sendAction('emailInvoice');
     }
+
+    public function markSentInvoice()
+    {
+        return $this->sendAction('mark_sent');
+    }
 }
